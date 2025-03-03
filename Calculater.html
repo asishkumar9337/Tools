@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered calculator tool for math, financial calculations, and unit conversions. Fully responsive and SEO-optimized.">
+    <meta name="keywords" content="AI calculator, math calculator, financial calculator, unit converter, SEO, responsive tool">
+    <meta name="author" content="Your Name">
+    <title>AI-Powered Calculator Tool</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #ad-space-top, #ad-space-bottom {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        #calculator-tool {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background: #ddd;
+            border-radius: 4px;
+        }
+
+        .tab-button.active {
+            background: #333;
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI-Powered Calculator Tool</h1>
+    </header>
+
+    <main>
+        <!-- Ad Space - Top -->
+        <section id="ad-space-top">
+            <!-- Google AdSense Ad Unit -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID"
+                    crossorigin="anonymous"></script>
+            <!-- Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+
+        <!-- Calculator Tool -->
+        <section id="calculator-tool">
+            <h2>Calculator</h2>
+            <div id="tabs">
+                <button class="tab-button active" data-tab="math">Math</button>
+                <button class="tab-button" data-tab="financial">Financial</button>
+                <button class="tab-button" data-tab="unit-converter">Unit Converter</button>
+            </div>
+
+            <!-- Math Calculator -->
+            <div id="math" class="tab-content active">
+                <input type="text" id="math-input" placeholder="Enter math expression (e.g., 2 + 2)">
+                <button id="calculate-math">Calculate</button>
+                <p id="math-result">Result: </p>
+            </div>
+
+            <!-- Financial Calculator -->
+            <div id="financial" class="tab-content">
+                <select id="financial-type">
+                    <option value="loan">Loan Calculator</option>
+                    <option value="interest">Simple Interest</option>
+                </select>
+                <div id="loan-calculator">
+                    <input type="number" id="loan-amount" placeholder="Loan Amount ($)">
+                    <input type="number" id="interest-rate" placeholder="Interest Rate (%)">
+                    <input type="number" id="loan-term" placeholder="Loan Term (Years)">
+                    <button id="calculate-loan">Calculate</button>
+                    <p id="loan-result">Monthly Payment: </p>
+                </div>
+                <div id="simple-interest-calculator">
+                    <input type="number" id="principal" placeholder="Principal Amount ($)">
+                    <input type="number" id="rate" placeholder="Interest Rate (%)">
+                    <input type="number" id="time" placeholder="Time (Years)">
+                    <button id="calculate-interest">Calculate</button>
+                    <p id="interest-result">Simple Interest: </p>
+                </div>
+            </div>
+
+            <!-- Unit Converter -->
+            <div id="unit-converter" class="tab-content">
+                <select id="conversion-type">
+                    <option value="length">Length</option>
+                    <option value="weight">Weight</option>
+                    <option value="temperature">Temperature</option>
+                </select>
+                <input type="number" id="input-value" placeholder="Enter value">
+                <select id="from-unit"></select>
+                <select id="to-unit"></select>
+                <button id="convert-units">Convert</button>
+                <p id="conversion-result">Result: </p>
+            </div>
+        </section>
+
+        <!-- Ad Space - Bottom -->
+        <section id="ad-space-bottom">
+            <!-- Google AdSense Ad Unit -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID"
+                    crossorigin="anonymous"></script>
+            <!-- Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+                 data-ad-slot="0987654321"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AI-Powered Calculator Tool. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript Functionality
+        // Tab Switching
+        const tabs = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.getAttribute('data-tab');
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        // Math Calculator
+        document.getElementById('calculate-math').addEventListener('click', () => {
+            const input = document.getElementById('math-input').value;
+            try {
+                const result = eval(input);
+                document.getElementById('math-result').textContent = `Result: ${result}`;
+            } catch (e) {
+                document.getElementById('math-result').textContent = 'Invalid expression';
+            }
+        });
+
+        // Financial Calculator
+        document.getElementById('financial-type').addEventListener('change', (e) => {
+            const type = e.target.value;
+            document.getElementById('loan-calculator').style.display = type === 'loan' ? 'block' : 'none';
+            document.getElementById('simple-interest-calculator').style.display = type === 'interest' ? 'block' : 'none';
+        });
+
+        document.getElementById('calculate-loan').addEventListener('click', () => {
+            const amount = parseFloat(document.getElementById('loan-amount').value);
+            const rate = parseFloat(document.getElementById('interest-rate').value);
+            const term = parseFloat(document.getElementById('loan-term').value);
+            const monthlyRate = rate / 100 / 12;
+            const payments = term * 12;
+            const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -payments));
+            document.getElementById('loan-result').textContent = `Monthly Payment: $${monthlyPayment.toFixed(2)}`;
+        });
+
+        document.getElementById('calculate-interest').addEventListener('click', () => {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const time = parseFloat(document.getElementById('time').value);
+            const interest = (principal * rate * time) / 100;
+            document.getElementById('interest-result').textContent = `Simple Interest: $${interest.toFixed(2)}`;
+        });
+
+        // Unit Converter
+        const units = {
+            length: ['meters', 'feet', 'inches', 'centimeters'],
+            weight: ['kilograms', 'pounds', 'ounces', 'grams'],
+            temperature: ['celsius', 'fahrenheit', 'kelvin']
+        };
+
+        document.getElementById('conversion-type').addEventListener('change', (e) => {
+            const type = e.target.value;
+            const fromUnit = document.getElementById('from-unit');
+            const toUnit = document.getElementById('to-unit');
+            fromUnit.innerHTML = '';
+            toUnit.innerHTML = '';
+            units[type].forEach(unit => {
+                fromUnit.innerHTML += `<option value="${unit}">${unit}</option>`;
+                toUnit.innerHTML += `<option value="${unit}">${unit}</option>`;
+            });
+        });
+
+        document.getElementById('convert-units').addEventListener('click', () => {
+            const inputValue = parseFloat(document.getElementById('input-value').value);
+            const fromUnit = document.getElementById('from-unit').value;
+            const toUnit = document.getElementById('to-unit').value;
+            const type = document.getElementById('conversion-type').value;
+            let result;
+
+            if (type === 'length') {
+                result = convertLength(inputValue, fromUnit, toUnit);
+            } else if (type === 'weight') {
+                result = convertWeight(inputValue, fromUnit, toUnit);
+            } else if (type === 'temperature') {
+                result = convertTemperature(inputValue, fromUnit, toUnit);
+            }
+
+            document.getElementById('conversion-result').textContent = `Result: ${result.toFixed(2)} ${toUnit}`;
+        });
+
+        function convertLength(value, from, to) {
+            const conversions = {
+                meters: 1,
+                feet: 3.28084,
+                inches: 39.3701,
+                centimeters: 100
+            };
+            return value * (conversions[to] / conversions[from]);
+        }
+
+        function convertWeight(value, from, to) {
+            const conversions = {
+                kilograms: 1,
+                pounds: 2.20462,
+                ounces: 35.274,
+                grams: 1000
+            };
+            return value * (conversions[to] / conversions[from]);
+        }
+
+        function convertTemperature(value, from, to) {
+            if (from === 'celsius') {
+                if (to === 'fahrenheit') return (value * 9/5) + 32;
+                if (to === 'kelvin') return value + 273.15;
+            } else if (from === 'fahrenheit') {
+                if (to === 'celsius') return (value - 32) * 5/9;
+                if (to === 'kelvin') return (value - 32) * 5/9 + 273.15;
+            } else if (from === 'kelvin') {
+                if (to === 'celsius') return value - 273.15;
+                if (to === 'fahrenheit') return (value - 273.15) * 9/5 + 32;
+            }
+            return value;
+        }
+    </script>
+</body>
+</html>
